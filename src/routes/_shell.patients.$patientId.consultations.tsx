@@ -236,6 +236,9 @@ function ConsultationCard({
               {c.diagnosis || <span className="text-muted-foreground italic">No diagnosis</span>}
             </span>
           </div>
+          {c.chief_complaint && (
+            <p className="mt-0.5 truncate text-xs text-muted-foreground">{c.chief_complaint}</p>
+          )}
           <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
             <FollowUpBadge date={c.follow_up_date} showDate />
             {c.immunotherapy_status && (

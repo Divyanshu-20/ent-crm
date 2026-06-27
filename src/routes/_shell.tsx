@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { AppHeader } from "@/components/layout/AppHeader";
+import { QuickAddFab } from "@/components/common/QuickAddFab";
 import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/_shell")({
@@ -44,9 +45,10 @@ function ShellLayout() {
         <AppSidebar />
         <SidebarInset className="flex flex-1 flex-col">
           <AppHeader />
-          <main className="flex-1 p-6">
+          <div className="flex-1 p-6">
             <Outlet />
-          </main>
+          </div>
+          <QuickAddFab />
         </SidebarInset>
       </div>
     </SidebarProvider>
